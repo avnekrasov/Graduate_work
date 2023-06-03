@@ -62,7 +62,7 @@ view_state = pdk.ViewState(
 deck = pdk.Deck(
     layers=[layer],
     initial_view_state=view_state,
-    tooltip={"text": "{AIRPORT} - {IATA_CODE}"},
+    tooltip={"text": "{AIRPORT} - {IATA_CODE}"}, # type: ignore
 )
 
 # Display the map using Streamlit
@@ -203,22 +203,22 @@ if st.button('Обучить модели для выбранного аэроп
         top_3_airports_gb = [airport for airport, _ in rmse_list_gb[:3]]
         st.write(f'Топ 3 аэропортпа по прогнозу модели Gradient Boosting: {top_3_airports_gb}')
         # Calculate residuals
-        residuals_gb = y_test - y_pred_gb
-        residuals_gb = np.residuals_gb
+     #   residuals_gb = y_test - y_pred_gb
+     #   residuals_gb = np.residuals_gb
 
 
     # Create a "Confirm Selection" button
-        if st.button('Построить графики'):
-            # Group data together
-            hist_data = [residuals_linear, residuals_rf, residuals_gb]
-            group_labels = ['Linear', 'RF', 'DF']
+    #    if st.button('Построить графики'):
+    #        # Group data together
+    #        hist_data = [residuals_linear, residuals_rf, residuals_gb]
+    #        group_labels = ['Linear', 'RF', 'DF']
 
-        # Create distplot with custom bin_size
-            fig = ff.create_distplot(
-            hist_data, group_labels)
+    #    # Create distplot with custom bin_size
+    #        fig = ff.create_distplot(
+    #        hist_data, group_labels)
 
         # Plot!
-            st.plotly_chart(fig, use_container_width=True)
+    #        st.plotly_chart(fig, use_container_width=True)
 
 
 
