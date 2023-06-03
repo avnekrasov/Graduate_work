@@ -8,7 +8,6 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
-from sklearn.metrics import mean_squared_error
 import seaborn as sns
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -205,7 +204,7 @@ if st.button('Обучить модели для выбранного аэроп
         st.write(f'Топ 3 аэропортпа по прогнозу модели Gradient Boosting: {top_3_airports_gb}')
         # Calculate residuals
         residuals_gb = y_test - y_pred_gb
-        residuals_gb = pd.Series(residuals_gb)
+        residuals_gb = np.residuals_gb
 
 
     # Create a "Confirm Selection" button
